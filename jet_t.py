@@ -1,3 +1,5 @@
+import argparse
+
 from triplet.hypergraph.TensorGlobalNetworkParam import TensorGlobalNetworkParam
 from triplet.hypergraph.NetworkModel import NetworkModel
 import torch.nn as nn
@@ -16,12 +18,18 @@ from jet_t_utils.neural_model import TriextractNeuralBuilder
 from jet_t_utils.network_compiler import TriextractNetworkCompiler
 from collections import OrderedDict
 
+parser = argparse.ArgumentParser()
+parser.add_argument('--dataset', type=str, default="14res",
+					help='dataset')
+args = parser.parse_args()
+
+dataset = args.dataset
 
 # the following parameters are required to adjust for different datasets
-train_file = 'data/triplet_data/15res/train.txt'
-dev_file = 'data/triplet_data/15res/dev.txt'
-test_file = 'data/triplet_data/15res/test.txt'
-trial_file = 'data/triplet_data/15res/trial.txt'
+train_file = 'data/triplet_data/%s/train.asote.txt' % dataset
+dev_file = 'data/triplet_data/%s/dev.asote.txt' % dataset
+test_file = 'data/triplet_data/%s/test.asote.txt' % dataset
+trial_file = 'data/triplet_data/%s/trial.txt' % dataset
 opinion_offset = 3 # This equals to M+1 in the paper
 dropout = 0.5  # 0.7 for 14lap only 0.5 for the rest datasets
 use_bert = False # default bert base
@@ -47,7 +55,7 @@ lstm_hidden_size = 300
 pos_emb_size = 100
 char_emb_size = 0
 charlstm_hidden_dim = 0
-emb_file = 'data/glove.840B.300d.txt'
+emb_file = 'D:/program/word-vector/glove.840B.300d.txt'
 # emb_file = None
 
 # default bert base is used

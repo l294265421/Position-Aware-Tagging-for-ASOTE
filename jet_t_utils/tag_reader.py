@@ -83,7 +83,7 @@ class TagReader():
 			total_p += len(new_pairs)
 			output = (output, new_pairs)
 
-			if len(new_pairs) > 0:
+			if len(new_pairs) > 0 or not is_labeled:
 				inst = LinearInstance(len(insts) + 1, 1, input, output)
 				for label in output[0]:
 					if not label in TagReader.label2id_map and is_labeled:

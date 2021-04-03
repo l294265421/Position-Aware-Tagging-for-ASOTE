@@ -2,6 +2,13 @@
 
 [EMNLP 2020] [Position-Aware Tagging for Aspect Sentiment Triplet Extraction (In EMNLP 2020)](https://arxiv.org/abs/2010.02609)
 
+## Evaluation on ASOTE
+We folk this repository from the [Position-Aware-Tagging-for-ASTE repository](https://github.com/xuuuluuu/Position-Aware-Tagging-for-ASTE) and evaluate the [Position-Aware-Tagging model](https://arxiv.org/abs/2010.02609) on the [ASOTE](https://arxiv.org/pdf/2103.15255.pdf) task.
+
+python jet_t.py
+
+Supported datasets include 14res, 14lap, 15res, 16res.
+
 # Task Description
 Aspect Sentiment Triplet Extraction (ASTE) is the task of extracting the triplets of target entities, their associated sentiment, and opinion spans explaining the reason for the sentiment. This task is **firstly** proposed by (Peng et al., 2020) in the paper publised in AAAI 2020, [Knowing What, How and Why: A Near Complete Solution for Aspect-based Sentiment Analysis (In AAAI 2020)](https://arxiv.org/pdf/1911.01616.pdf)
 
