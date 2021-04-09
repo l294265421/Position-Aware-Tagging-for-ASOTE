@@ -27,6 +27,9 @@ parser.add_argument('--dataset', type=str, default="14res",
 parser.add_argument('--emb_file', type=str,
 					default="D:/program/word-vector/glove.840B.300d.txt",
 					help='emb_file')
+parser.add_argument('--base_dir', type=str,
+					default="",
+					help='base dir')
 args = parser.parse_args()
 
 dataset = args.dataset
@@ -144,7 +147,7 @@ fm.labels = labels
 fm.load_pretrain(emb_file, vocab2id)
 compiler = TriextractNetworkCompiler(TagReader.label2id_map, max_size, polarity, opinion_offset, opinion_direction)
 evaluator = nereval()
-model = NetworkModel(fm, compiler, evaluator)
+model = NetworkModel(fm, compiler, evaluator, model_path=args.base_dir + 'best_model.pt')
 
 
 if require_training:
