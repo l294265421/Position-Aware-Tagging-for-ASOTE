@@ -156,7 +156,7 @@ class TensorNetwork:
 
 
     @abstractmethod
-    def get_children(self, k) -> np.ndarray:
+    def get_children(self, k):
         pass
 
 
@@ -166,7 +166,7 @@ class TensorNetwork:
 
 
     @abstractmethod
-    def count_nodes(self) -> int:
+    def count_nodes(self):
         pass
 
 

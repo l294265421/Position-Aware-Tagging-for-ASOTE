@@ -253,7 +253,7 @@ class BatchTensorNetwork:
 
 
     #@abstractmethod
-    def get_children(self, stage_idx) -> np.ndarray:
+    def get_children(self, stage_idx):
         return self.children[stage_idx]
 
 
@@ -263,7 +263,7 @@ class BatchTensorNetwork:
 
 
     @abstractmethod
-    def count_nodes(self) -> int:
+    def count_nodes(self):
         pass
 
 

@@ -46,7 +46,7 @@ class TensorGlobalNetworkParam(nn.Module):
 
         self.locked = True
 
-    def get_transition_id(self, parent_label_id, children_label_ids) -> int:
+    def get_transition_id(self, parent_label_id, children_label_ids):
         # print(self.tuple2id)
         return self.tuple2id[tuple([parent_label_id] + children_label_ids)]
         

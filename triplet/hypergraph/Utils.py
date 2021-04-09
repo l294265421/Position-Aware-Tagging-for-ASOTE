@@ -236,7 +236,7 @@ class Score():
 from abc import abstractmethod
 class Eval():
     @abstractmethod
-    def eval(self, insts) -> Score:
+    def eval(self, insts):
         pass
 
 
