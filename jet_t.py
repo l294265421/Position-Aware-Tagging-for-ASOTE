@@ -21,6 +21,9 @@ from collections import OrderedDict
 parser = argparse.ArgumentParser()
 parser.add_argument('--dataset', type=str, default="14res",
 					help='dataset')
+parser.add_argument('--emb_file', type=str,
+					default="D:/program/word-vector/glove.840B.300d.txt",
+					help='emb_file')
 args = parser.parse_args()
 
 dataset = args.dataset
@@ -55,7 +58,7 @@ lstm_hidden_size = 300
 pos_emb_size = 100
 char_emb_size = 0
 charlstm_hidden_dim = 0
-emb_file = 'D:/program/word-vector/glove.840B.300d.txt'
+emb_file = args.emb_file
 # emb_file = None
 
 # default bert base is used

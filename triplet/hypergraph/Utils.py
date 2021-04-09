@@ -94,6 +94,8 @@ def load_emb_glove(path, word2idx, random_embedding_dim = 100, UNK = 'unk', sep 
             for line in file:
                 elems = line.split()
                 token = ''.join(elems[0:-embedding_dim])
+                if token not in word2idx:
+                    continue
                 embedding[token] = elems[-embedding_dim:]
 
 
