@@ -1,3 +1,5 @@
+#!/data/miniconda3/bin/python
+# -*- coding:utf-8 -*-
 import argparse
 
 from triplet.hypergraph.TensorGlobalNetworkParam import TensorGlobalNetworkParam
