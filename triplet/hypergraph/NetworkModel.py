@@ -5,6 +5,8 @@ import time
 from termcolor import colored
 from multiprocessing import Process
 from triplet.hypergraph.BatchTensorNetwork import BatchTensorNetwork
+from tqdm import tqdm
+
 
 class NetworkModel(nn.Module):
     Iter = 0
@@ -239,7 +241,7 @@ class NetworkModel(nn.Module):
             k = 0
             idx = 0
 
-            for i in np.random.permutation(len(self.all_instances)):
+            for i in tqdm(np.random.permutation(len(self.all_instances))):
                 self.train()
                 inst = self.all_instances[i]
                 if inst.get_instance_id() > 0:
