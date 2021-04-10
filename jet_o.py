@@ -25,11 +25,18 @@ parser.add_argument('--emb_file', type=str,
 					default="D:/program/word-vector/glove.840B.300d.txt",
 					help='emb_file')
 parser.add_argument('--base_dir', type=str,
-					default="",
+					default=".",
+					help='base dir')
+parser.add_argument('--current_run', type=str,
+					default="0",
 					help='base dir')
 args = parser.parse_args()
 
 dataset = args.dataset
+current_run = args.current_run
+args.base_dir = os.path.join(args.base_dir, dataset, current_run) + '/'
+if not os.path.exists(args.base_dir):
+	os.makedirs(args.base_dir, exist_ok=True)
 
 # the following parameters are required to adjust for different datasets
 train_file = 'data/triplet_data/%s/train.asote.txt' % dataset
@@ -145,7 +152,7 @@ fm.load_pretrain(emb_file, vocab2id)
 print(list(TagReader.label2id_map.keys()))
 compiler = TriextractNetworkCompiler(TagReader.label2id_map, max_size, polarity, opinion_offset, opinion_direction)
 evaluator = nereval()
-model = NetworkModel(fm, compiler, evaluator, model_path=args.base_dir + 'best_model.pt')
+model = NetworkModel(fm, compiler, evaluator, model_path=args.base_dir + 'best_model.pt', args=args)
 
 if require_training:
  	if batch_size == 1:

@@ -9,7 +9,7 @@ from triplet.hypergraph.BatchTensorNetwork import BatchTensorNetwork
 class NetworkModel(nn.Module):
     Iter = 0
 
-    def __init__(self, fm, compiler, evaluator, model_path = 'best_model.pt'):
+    def __init__(self, fm, compiler, evaluator, model_path = 'best_model.pt', args=None):
         super().__init__()
         self.fm = fm
         self.compiler = compiler
@@ -21,6 +21,8 @@ class NetworkModel(nn.Module):
         self.model_path = model_path
         self.check_every = None
         self.weight_decay = 0
+
+        self.args = args
 
     def set_model_path(self, path):
         self.model_path = path
@@ -301,7 +303,7 @@ class NetworkModel(nn.Module):
                         end_time = time.time()
                         print(colored("Test -- ", 'red'), str(self.test_score),
                               '\tTime={:.2f}s'.format(end_time - start_time), flush=True)
-                        with open('result.txt', 'w') as f:
+                        with open(self.args.base_dir + 'result.txt', 'w') as f:
                             for inst in results:
                                 f.write(str(inst.get_input()) +'\n')
                                 f.write(str(inst.get_output()) +'\n')
