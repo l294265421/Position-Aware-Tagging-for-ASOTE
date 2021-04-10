@@ -12,4 +12,4 @@ from triplet.hypergraph.TensorBaseNetwork import TensorBaseNetwork
 from triplet.hypergraph.TensorGlobalNetworkParam import TensorGlobalNetworkParam
 from triplet.hypergraph.TensorNetwork import TensorNetwork
 from triplet.hypergraph.TensorTableLookupNetwork import TensorTableLookupNetwork
-from triplet.hypergraph.Visualizer import Visualizer
+# from triplet.hypergraph.Visualizer import Visualizer

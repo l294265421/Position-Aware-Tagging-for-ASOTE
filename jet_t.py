@@ -1,6 +1,5 @@
 #!/data/miniconda3/bin/python
 # -*- coding:utf-8 -*-
-
 import argparse
 
 from triplet.hypergraph.TensorGlobalNetworkParam import TensorGlobalNetworkParam
@@ -46,7 +45,7 @@ train_file = 'data/triplet_data/%s/train.asote.txt' % dataset
 dev_file = 'data/triplet_data/%s/dev.asote.txt' % dataset
 test_file = 'data/triplet_data/%s/test.asote.txt' % dataset
 trial_file = 'data/triplet_data/%s/trial.txt' % dataset
-opinion_offset = 3 # This equals to M+1 in the paper
+opinion_offset = 7 # This equals to M+1 in the paper
 dropout = 0.5  # 0.7 for 14lap only 0.5 for the rest datasets
 use_bert = False # default bert base
 
