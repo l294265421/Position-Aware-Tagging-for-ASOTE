@@ -25,7 +25,12 @@ class TagReader():
 			output = ['O' for x in range(len(input))]
 			polarity = [0 for x in range(len(input))]
 			for i,t in enumerate(t_output):
-				t = t.split('=')[1]
+				if t.count('=') > 1:
+					# deal with the words that contain =
+					equal_sign_index = t.rindex('=')
+					t = t[equal_sign_index + 1:]
+				else:
+					t = t.split('=')[1]
 				if t != 'O':
 					output[i]= t
 			# print(line)
