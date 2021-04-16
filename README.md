@@ -2,7 +2,7 @@
 
 [EMNLP 2020] [Position-Aware Tagging for Aspect Sentiment Triplet Extraction (In EMNLP 2020)](https://arxiv.org/abs/2010.02609)
 
-## Evaluation on ASOTE (M=6)
+## Evaluation on ASOTE
 We folk this repository from the [Position-Aware-Tagging-for-ASTE repository](https://github.com/xuuuluuu/Position-Aware-Tagging-for-ASTE) and evaluate the [Position-Aware-Tagging model](https://arxiv.org/abs/2010.02609) on the [ASOTE](https://arxiv.org/pdf/2103.15255.pdf) task.
 
 Supported datasets include 14res, 14lap, 15res, 16res.
@@ -15,7 +15,7 @@ sh run.sh jet_o.py --base_dir JET/O/ --dataset 14res
 Note that, when M=6, run on the 14res and 14lap datasets, both jet_t and jet_o need 60G memory; run on the 15res and 16res datasets, both jet_t and jet_o need 40G memory.
 
 
-### Running with BERT
+### Running with BERT (M=6)
 sh run_bert.sh jet_t.py --base_dir JET/BERT/T/ --dataset 14res
 
 sh run_bert.sh jet_o.py --base_dir JET/BERT/O/ --dataset 14res
