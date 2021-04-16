@@ -20,6 +20,16 @@ from jet_o_utils.neural_model import TriextractNeuralBuilder
 from jet_o_utils.network_compiler import TriextractNetworkCompiler
 from collections import OrderedDict
 
+
+def my_bool(val):
+    if val == 'True':
+        return True
+    elif val == 'False':
+        return False
+    else:
+        raise argparse.ArgumentTypeError('Unsupported value encountered.')
+
+
 parser = argparse.ArgumentParser()
 parser.add_argument('--dataset', type=str, default="14res",
 					help='dataset')
@@ -32,6 +42,7 @@ parser.add_argument('--base_dir', type=str,
 parser.add_argument('--current_run', type=str,
 					default="0",
 					help='base dir')
+parser.add_argument('--use_bert', type=my_bool, default=False, choices=[True, False])
 args = parser.parse_args()
 
 dataset = args.dataset
@@ -47,7 +58,7 @@ test_file = 'data/triplet_data/%s/test.asote.txt' % dataset
 trial_file = 'data/triplet_data/%s/trial.txt' % dataset
 opinion_offset = 7 # This equals to M+1 in the paper
 dropout = 0.7  # 0.7 for 14lap only 0.5 for the rest datasets
-use_bert = False  # default bert base
+use_bert = args.use_bert  # default bert base
 
 
 # keep the folowing parameters for reproducing our results

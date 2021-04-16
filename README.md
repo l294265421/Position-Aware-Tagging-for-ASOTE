@@ -5,13 +5,23 @@
 ## Evaluation on ASOTE
 We folk this repository from the [Position-Aware-Tagging-for-ASTE repository](https://github.com/xuuuluuu/Position-Aware-Tagging-for-ASTE) and evaluate the [Position-Aware-Tagging model](https://arxiv.org/abs/2010.02609) on the [ASOTE](https://arxiv.org/pdf/2103.15255.pdf) task.
 
+Supported datasets include 14res, 14lap, 15res, 16res.
+
+### Running with GloVe
 sh run.sh jet_t.py --base_dir JET/T/ --dataset 14res
 
 sh run.sh jet_o.py --base_dir JET/O/ --dataset 14res
 
-Supported datasets include 14res, 14lap, 15res, 16res.
+Note that, when M=6, run on the 14res and 14lap datasets, both jet_t and jet_o need 60G memory; run on the 15res and 16res datasets, both jet_t and jet_o need 40G memory.
 
-Note that, when M=6, running on the 14res and 14lap datasets, both jet_t and jet_o need 60G memory; running on the 15res and 16res datasets, both jet_t and jet_o need 40G memory.
+
+### Running with BERT
+sh run_bert.sh jet_t.py --base_dir JET/BERT/T/ --dataset 14res
+
+sh run_bert.sh jet_o.py --base_dir JET/BERT/O/ --dataset 14res
+
+Note that, when M=6, run on the 14res and 14lap datasets, both jet_t and jet_o need 62G memory; run on the 15res and 16res datasets, both jet_t and jet_o need 40G memory.
+
 
 # Task Description
 Aspect Sentiment Triplet Extraction (ASTE) is the task of extracting the triplets of target entities, their associated sentiment, and opinion spans explaining the reason for the sentiment. This task is **firstly** proposed by (Peng et al., 2020) in the paper publised in AAAI 2020, [Knowing What, How and Why: A Near Complete Solution for Aspect-based Sentiment Analysis (In AAAI 2020)](https://arxiv.org/pdf/1911.01616.pdf)
