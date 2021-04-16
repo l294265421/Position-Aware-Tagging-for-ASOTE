@@ -2,12 +2,12 @@
 
 [EMNLP 2020] [Position-Aware Tagging for Aspect Sentiment Triplet Extraction (In EMNLP 2020)](https://arxiv.org/abs/2010.02609)
 
-## Evaluation on ASOTE
+## Evaluation on ASOTE (M=6)
 We folk this repository from the [Position-Aware-Tagging-for-ASTE repository](https://github.com/xuuuluuu/Position-Aware-Tagging-for-ASTE) and evaluate the [Position-Aware-Tagging model](https://arxiv.org/abs/2010.02609) on the [ASOTE](https://arxiv.org/pdf/2103.15255.pdf) task.
 
 Supported datasets include 14res, 14lap, 15res, 16res.
 
-### Running with GloVe
+### Running with GloVe (M=6)
 sh run.sh jet_t.py --base_dir JET/T/ --dataset 14res
 
 sh run.sh jet_o.py --base_dir JET/O/ --dataset 14res
