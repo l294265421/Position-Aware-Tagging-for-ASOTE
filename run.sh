@@ -14,7 +14,7 @@ export PYTHONPATH=${ROOT}:${PYTHONPATH}
 
 for i in `seq 0 4`
 do
-	${python} $@ --emb_file glove.840B.300d.txt --current_run $i
+	${python} $@ --emb_file /data/ceph/yuncongli/word-vector/glove.840B.300d.txt --current_run $i
 done
 
 end_time=`date +%Y%m%d%H%M%S`

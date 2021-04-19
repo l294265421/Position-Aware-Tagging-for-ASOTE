@@ -52,9 +52,9 @@ if not os.path.exists(args.base_dir):
 	os.makedirs(args.base_dir, exist_ok=True)
 
 # the following parameters are required to adjust for different datasets
-train_file = 'data/triplet_data/%s/train.asote.txt' % dataset
-dev_file = 'data/triplet_data/%s/dev.asote.txt' % dataset
-test_file = 'data/triplet_data/%s/test.asote.txt' % dataset
+train_file = 'data/triplet_data/%s/train.asote.v2.txt' % dataset
+dev_file = 'data/triplet_data/%s/dev.asote.v2.txt' % dataset
+test_file = 'data/triplet_data/%s/test.asote.v2.txt' % dataset
 trial_file = 'data/triplet_data/%s/trial.txt' % dataset
 opinion_offset = 7 # This equals to M+1 in the paper
 dropout = 0.5  # 0.7 for 14lap only 0.5 for the rest datasets

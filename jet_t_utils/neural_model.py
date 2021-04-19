@@ -43,8 +43,8 @@ class TriextractNeuralBuilder(NeuralBuilder):
 		if self.bert_emb > 0:
 			from bert_serving.client import BertClient
 			bc = BertClient(port=8880)
-			tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
-			# tokenizer = BertTokenizer.from_pretrained("word-vector/uncased_L-12_H-768_A-12")
+			# tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
+			tokenizer = BertTokenizer.from_pretrained("/data/ceph/yuncongli/word-vector/uncased_L-12_H-768_A-12")
 
 			tokens = []
 			orig_to_tok_index = []# 0 - >0, 1-> len(all word_piece)

@@ -12,11 +12,11 @@ ROOT=${CUR_DIR}
 
 export PYTHONPATH=${ROOT}:${PYTHONPATH}
 
-/data/miniconda3/bin/bert-serving-start -pooling_layer -1 -model_dir word-vector/uncased_L-12_H-768_A-12 -max_seq_len=NONE -num_worker=4 -port=8880 -pooling_strategy=NONE -cpu -show_tokens_to_client > bert_service.log 2>&1 &
+/data/miniconda3/bin/bert-serving-start -pooling_layer -1 -model_dir /data/ceph/yuncongli/word-vector/uncased_L-12_H-768_A-12 -max_seq_len=NONE -num_worker=4 -port=8880 -pooling_strategy=NONE -cpu -show_tokens_to_client > bert_service.log 2>&1 &
 
 for i in `seq 0 4`
 do
-	${python} $@  --use_bert True --emb_file word-vector/glove.840B.300d.txt --current_run $i
+	${python} $@  --use_bert True --emb_file /data/ceph/yuncongli/word-vector/glove.840B.300d.txt --current_run $i
 done
 
 end_time=`date +%Y%m%d%H%M%S`
