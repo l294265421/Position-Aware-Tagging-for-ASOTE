@@ -17,6 +17,9 @@ class TagReader():
 			line = line.strip()
 			line = line.split('####')
 			input = line[0].split()  # sentence
+			if len(input) < 2:
+				continue
+
 			t_output = line[1].split()  # target
 			o_output = line[2].split()	# opinion
 			raw_pairs = eval(line[3])	# triplets
